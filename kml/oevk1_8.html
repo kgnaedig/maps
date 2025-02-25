@@ -1,1 +1,121 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KML on Leaflet Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+       <style>
+        /* Remove margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Set the height and width of the map to fill the viewport */
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Leaflet Omnivore plugin -->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+    <script>
+        // Initialize the map
+      var map = L.map('map').setView([47.5021, 19.0345], 16);
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // KML content as a string
+        const kmlString = `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1eZscPv0A4aJ5w-c4A2yZqTzPHXj-epL_">
+	<name>Copy of 2026 - 1. EVK</name>
+	
+	<StyleMap id="__managed_style_118970061A35A4105544">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_22E3F4C69E35A4105544</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_35F725281D35A4105544</styleUrl>
+		</Pair>
+	</StyleMap>
+	
+	<Placemark id="04ED161D2B34B7C40638">
+		<name>BP 1.1</name>
+		<LookAt>
+			<longitude>19.03356847788044</longitude>
+			<latitude>47.50112261745238</latitude>
+			<altitude>186.51943565145</altitude>
+			<heading>1.280132194113145</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>427.6936914498948</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_118970061A35A4105544</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						19.03372274220026,47.50145016548866,0 19.0322713028373,47.5021300560828,0 19.03127317394416,47.50278539460961,0 19.03066200898726,47.50311604218248,0 19.0290777705723,47.50444013888849,0 19.02860891196756,47.5050032572838,0 19.02804304252004,47.50357212841755,0 19.02875059149559,47.50277962416963,0 19.02904394460684,47.50245099334404,0 19.02965725702071,47.50207990548375,0 19.03014172260564,47.50182944101827,0 19.03054401178343,47.50148235375713,0 19.03168137418423,47.50078271658742,0 19.03213324517913,47.50054640599529,0 19.03258485474242,47.50036622517201,0 19.03368770901566,47.49952750799501,0 19.03410346606631,47.49917832424965,0 19.03520453144267,47.49980329826307,0 19.03455878228434,47.50025670058989,0 19.03412564042326,47.50073862327188,0 19.03372274220026,47.50145016548866,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	
+		<name>007</name>
+		<LookAt>
+			<longitude>19.03602479147638</longitude>
+			<latitude>47.50517995745513</latitude>
+			<altitude>111.4120103690628</altitude>
+			<heading>-33.27315910714858</heading>
+			<tilt>3.59511646637016</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>187.5986548243964</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0A42E495D735A4105546</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						19.03627884899245,47.50516814114005,0 19.03704691691954,47.50527141647216,0 19.03698888521526,47.50571393853376,0 19.0369272130565,47.50589396938458,0 19.03706653611811,47.50590416921775,0 19.03710735925524,47.50592339969396,0 19.03710737542771,47.5061040635195,0 19.03708190241259,47.50635878702146,0 19.03706380078271,47.50665284353279,0 19.0369999670894,47.50687461221492,0 19.03702848043039,47.50728359789197,0 19.03700776527502,47.50753748037201,0 19.03701128411574,47.50762009126525,0 19.03627669595474,47.5076235498629,0 19.03537730733753,47.50761101200689,0 19.03484749044921,47.50765176096876,0 19.03420754616489,47.5076504539906,0 19.03287633744783,47.50769781739847,0 19.03290135890426,47.50706458537675,0 19.03319942602514,47.50705426735,0 19.03393493188602,47.50695883732054,0 19.03422438166762,47.50691428170867,0 19.03449143378834,47.50669783859767,0 19.03488972350537,47.50635532242928,0 19.03518916578484,47.50607617659836,0 19.03543483112263,47.5058715066463,0 19.0357966581363,47.50556714583788,0 19.03590141733887,47.50545830562972,0 19.03597784645817,47.50532109805827,0 19.03605094236711,47.50517845605135,0 19.03627884899245,47.50516814114005,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	
+</Document>
+</kml>
+`;
+
+        // Parse the KML string and add it to the map
+        const kmlLayer = omnivore.kml.parse(kmlString);
+        kmlLayer.addTo(map);
+
+        // Zoom the map to the KML bounds
+        kmlLayer.on('ready', function() {
+            map.fitBounds(kmlLayer.getBounds());
+        });
+    </script>
+</body>
+</html>
