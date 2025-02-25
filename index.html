@@ -36,13 +36,63 @@
             color: #2980b9;
             text-decoration: underline;
         }
+		
+		 .tile-panel {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        width: 100%;
+    }
+    .tile-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #343a40;
+    }
+    .tile-description {
+        font-size: 1rem;
+        color: #6c757d;
+        margin-bottom: 15px;
+    }
+    .tile-link {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    .tile-link:hover {
+        background-color: #0056b3;
+    }
+	
+	
     </style>
 </head>
 <body>
     <h1>XI. kerület térképes projekt</h1>
-    <div class="links">
-        <a href="./kml/oevk1.html">1. OEVK szavazókörei (forrás: kml file)</a> 
-        <a href="https://www.google.com/maps/d/edit?mid=1_c12Ef3vF1S6ipfP1942J4IfjdzWpTg&ll=47.45797563195268%2C19.017738949999995&z=13">11. kerület szavazókörei (kézzel rajzolt, Kristóf)</a> 
-    </div>
+  
+	
+	
+<div class="tile-panel">
+    <div class="tile-title">Google maps</div>
+    <!-- <div class="tile-description">Kézzel rajzolt vagy listából generált térképek.</div> -->
+  <a href="https://www.google.com/maps/d/edit?mid=1_c12Ef3vF1S6ipfP1942J4IfjdzWpTg&ll=47.45797563195268%2C19.017738949999995&z=13">11. kerület szavazókörei </a> 
+     <br /> Kézzel rajzolt (Kristóf)
+  
+	
+</div>
+    
+<div class="tile-panel">
+    <div class="tile-title">OSM  OpenStreetMap </div>
+    
+	<a href="./kml/oevk1.html">1. OEVK szavazókörei</a> 
+    <br /> Generált, forrás: kml file
+
+</div>
 </body>
 </html>
