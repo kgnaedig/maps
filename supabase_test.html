@@ -17,7 +17,7 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpjeGJoZnptbHRjZWR4a3J3bnpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA1OTg5ODcsImV4cCI6MjA1NjE3NDk4N30.yabG_el9pxeZTcVsGRSlkWMcrolA-Gh_XWN1BOYevNk';
        
         function initSupabase() {
-          const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+          const supabaseClient = await supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
           console.log("Supabase Initialized:", supabaseClient);
           // Rest of your code here
                     fetchTableContent();
