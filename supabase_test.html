@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supabase Table Content</title>
+    
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -13,6 +15,17 @@
     <script>
         const SUPABASE_URL = 'https://jcxbhfzmltcedxkrwnzf.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpjeGJoZnptbHRjZWR4a3J3bnpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA1OTg5ODcsImV4cCI6MjA1NjE3NDk4N30.yabG_el9pxeZTcVsGRSlkWMcrolA-Gh_XWN1BOYevNk';
+       
+        function initSupabase() {
+          const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+          console.log("Supabase Initialized:", supabaseClient);
+          // Rest of your code here
+                    fetchTableContent();
+
+        }
+        
+        window.onload = initSupabase;
+        
         const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         async function fetchTableContent() {
@@ -33,7 +46,6 @@
             });
         }
 
-        fetchTableContent();
     </script>
 </body>
 </html>
