@@ -35,12 +35,15 @@
                 if (error) {
                     throw error;
                 }
+            console.log("got data:");
 
                 const tableContentElement = document.getElementById('tableContent');
                 data.forEach(item => {
                     const listItem = document.createElement('li');
                     listItem.textContent = JSON.stringify(item);
                     tableContentElement.appendChild(listItem);
+                                console.log("item :", JSON.stringify(item););
+
                 });
             } catch (error) {
                 console.error('Error fetching data:', error);
