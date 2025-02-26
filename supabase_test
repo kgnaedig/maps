@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Table Content</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <h1>Supabase Table Content</h1>
+    <ul id="tableContent"></ul>
+
+    <script>
+        const SUPABASE_URL = 'https://jcxbhfzmltcedxkrwnzf.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpjeGJoZnptbHRjZWR4a3J3bnpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA1OTg5ODcsImV4cCI6MjA1NjE3NDk4N30.yabG_el9pxeZTcVsGRSlkWMcrolA-Gh_XWN1BOYevNk';
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function fetchTableContent() {
+            const { data, error } = await supabase
+                .from('section')
+                .select('*');
+
+            if (error) {
+                console.error('Error fetching data:', error);
+                return;
+            }
+
+            const tableContentElement = document.getElementById('tableContent');
+            data.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = JSON.stringify(item);
+                tableContentElement.appendChild(listItem);
+            });
+        }
+
+        fetchTableContent();
+    </script>
+</body>
+</html>
