@@ -26,8 +26,6 @@
         
         window.onload = initSupabase;
         
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         async function fetchTableContent() {
             const { data, error } = await supabase
                 .from('section')
